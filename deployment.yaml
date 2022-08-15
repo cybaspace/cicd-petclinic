@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: petclinic-sample
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: petclinic-sample
+    spec:
+      containers:
+      - name: petclinic-sample
+        image: registry.cicd-demo.de/demo/petclinic
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+        - name: registry.cicd-demo.de
