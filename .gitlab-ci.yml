@@ -17,7 +17,7 @@
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
 
 
-image: docker:22.06-rc-dind
+image: docker:19-dind
 
 stages:          # List of stages for jobs, and their order of execution
   - build
@@ -52,7 +52,7 @@ variables:
     -DdeployAtEnd=true 
 
 services:
-  - docker:22.06-rc-dind
+  - docker:19-dind
 
 build-job:       # This job runs in the build stage, which runs first.
   image: maven:3.8-jdk-11
